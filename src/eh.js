@@ -11,12 +11,12 @@ const printPartitionIds = hub => {
 const writeToHub = (hub, message) => {
   const client = EventHubClient.fromConnectionString(process.env.CONNSTR || '', hub)
   return client.open()
-      .then(() => client.createSender())
-      .then(tx => {
-        tx.on('errorReceived', err => console.log(err))
-        return tx.send({ contents: message }, message)
-      })
-     .then(() => client.close())
+    .then(() => client.createSender())
+    .then(tx => {
+      tx.on('errorReceived', err => console.log(err))
+      return tx.send({ contents: message }, message)
+    })
+    .then(() => client.close())
 }
 
 const readFromHub = (hub, partitionId) => {
