@@ -15,7 +15,7 @@ git clone https://github.com/navicore/ehcli.git && cd ehcli && yarn install && y
 ```console
   Usage: ehcli [options] [command]
 
-  IMPORTANT: set env var CONNSTR= to a EventHubs Connection String. See Shared access policies.
+  IMPORTANT: set env var CONNSTR= to a Service Bus Connection String. See Shared access policies.
 
 
   Options:
@@ -26,6 +26,7 @@ git clone https://github.com/navicore/ehcli.git && cd ehcli && yarn install && y
 
   Commands:
 
-    write|w <hub> <event>    write an event
-    read|r <hub>               read events
+    printIds|p <hub>            print partition IDs
+    write|w <hub> <event>       write an event
+    read|r <hub> <partitionId>  read an event
 ```
