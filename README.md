@@ -1,0 +1,31 @@
+# ehcli
+
+A node commander cli for Azure EventHubs reading and writing
+
+## INSTALLATION
+
+Something like:
+
+```console
+git clone https://github.com/navicore/ehcli.git && cd ehcli && yarn install && yarn link
+```
+
+## USAGE
+
+```console
+  Usage: ehcli [options] [command]
+
+  IMPORTANT: set env var CONNSTR= to a EventHubs Connection String. See Shared access policies.
+
+
+  Options:
+
+    -V, --version  output the version number
+    -h, --help     output usage information
+
+
+  Commands:
+
+    write|w <hub> <event>    write an event
+    read|r <hub>               read events
+```

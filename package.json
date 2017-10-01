@@ -1,0 +1,33 @@
+{
+  "name": "ehcli",
+  "preferGlobal": true,
+  "bin": "./src/main.js",
+  "version": "1.0.0",
+  "description": "A cli for Azure EventHubs reading and writing",
+  "main": "src/main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/navicore/ehcli.git"
+  },
+  "keywords": [
+    "npm",
+    "azure",
+    "EventHubs"
+  ],
+  "author": "Ed Sweeney",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/navicore/ehcli/issues"
+  },
+  "homepage": "https://github.com/navicore/ehcli#readme",
+  "dependencies": {
+    "azure-event-hubs": "^0.0.8",
+    "commander": "^2.11.0"
+  },
+  "devDependencies": {
+    "prettier-standard": "^7.0.1"
+  }
+}
