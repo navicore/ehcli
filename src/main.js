@@ -14,7 +14,7 @@ program
   .description('print partition IDs')
   .action(hub => {
     printPartitionIds(hub)
-      .catch((error) => {
+      .catch(error => {
         console.info(`got error: ${error}`)
       })
   })
@@ -25,7 +25,7 @@ program
   .description('write an event')
   .action((hub, event) => {
     writeToHub(hub, {body: event})
-      .catch((error) => {
+      .catch(error => {
         console.info(`got error: ${error}`)
       })
   })
