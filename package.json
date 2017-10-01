@@ -28,6 +28,7 @@
     "commander": "^2.11.0"
   },
   "devDependencies": {
+    "eslint-config-standard": "^10.2.1",
     "prettier-standard": "^7.0.1"
   }
 }
