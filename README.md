@@ -1,5 +1,7 @@
 # ehcli
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/48a5dc9e38b1432f8888c94db66dbf2f)](https://www.codacy.com/app/navicore/ehcli?utm_source=github.com&utm_medium=referral&utm_content=navicore/ehcli&utm_campaign=badger)
+
 A node commander cli for Azure EventHubs reading and writing
 
 ## INSTALLATION
