@@ -7,6 +7,7 @@ const printPartitionIds = hub => {
     .then(ids => ids.forEach((id) => console.log(id)))
     .then(() => client.close())
 }
+const crypto = require('crypto')
 
 const writeToHub = (hub, message) => {
   const client = EventHubClient.fromConnectionString(process.env.CONNSTR || '', hub)
@@ -14,7 +15,8 @@ const writeToHub = (hub, message) => {
     .then(() => client.createSender())
     .then(tx => {
       tx.on('errorReceived', err => console.log(err))
-      return tx.send({ contents: message }, message)
+      const h = crypto.createHash('md5').update(message.body).digest('hex')
+      return tx.send({ contents: message }, h)
     })
     .then(() => client.close())
 }
