@@ -9,14 +9,15 @@ const printPartitionIds = hub => {
 }
 const crypto = require('crypto')
 
+// message should already be stringified
 const writeToHub = (hub, message) => {
   const client = EventHubClient.fromConnectionString(process.env.CONNSTR || '', hub)
   return client.open()
     .then(() => client.createSender())
     .then(tx => {
       tx.on('errorReceived', err => console.log(err))
-      const h = crypto.createHash('md5').update(message.body).digest('hex')
-      return tx.send({ contents: message }, h)
+      const h = crypto.createHash('md5').update(message).digest('hex')
+      return tx.send(message, h)
     })
     .then(() => client.close())
 }
@@ -28,8 +29,7 @@ const readFromHub = (hub, partitionId) => {
     .then(rx => {
       rx.on('errorReceived', err => console.log(err))
       rx.on('message', message => {
-        const body = message.body
-        console.log(`${JSON.stringify(body, 0, 2)}`)
+        console.log(message.body)
       })
     })
 }

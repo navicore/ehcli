@@ -24,7 +24,7 @@ program
   .alias('w')
   .description('write an event')
   .action((hub, event) => {
-    writeToHub(hub, {body: event})
+    writeToHub(hub, event)
       .catch(error => {
         console.info(`got error: ${error}`)
       })
