@@ -29,7 +29,8 @@ const readFromHub = (hub, partitionId) => {
     .then(rx => {
       rx.on('errorReceived', err => console.log(err))
       rx.on('message', message => {
-        console.log(message.body.toString('utf8'))
+        // presuming json, if not, use: console.log(message.body.toString('utf8'));
+        console.log(JSON.stringify(message.body))
       })
     })
 }
