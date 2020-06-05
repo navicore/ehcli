@@ -1,3 +1,5 @@
+.DS*
+ENV*sh
 # Logs
 logs
 *.log
